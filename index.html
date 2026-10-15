@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dela Pena</title>
 
 <style>
+
+/* GENERAL */
 
 * {
   box-sizing: border-box;
@@ -16,7 +19,12 @@
 html, body {
   margin: 0;
   padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+
   background: #ffffff;
+
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -25,10 +33,15 @@ body {
   justify-content: center;
 }
 
+
+/* MAIN PAGE */
+
 .page {
   width: 100%;
   max-width: 500px;
+
   min-height: 100vh;
+  min-height: 100dvh;
 
   background: #ffffff;
   color: #000000;
@@ -38,7 +51,6 @@ body {
   align-items: center;
 
   text-align: center;
-  overflow: hidden;
 }
 
 
@@ -46,7 +58,12 @@ body {
 
 .content {
   width: 100%;
-  padding-top: 70px;
+
+  padding-top: clamp(45px, 8vh, 90px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -55,12 +72,16 @@ body {
 .tagline {
   font-size: 11px;
   font-weight: 300;
-  letter-spacing: 5px;
+
+  letter-spacing: 4px;
+
   white-space: nowrap;
+
+  text-align: center;
 }
 
 
-/* ICON GRID */
+/* SOCIAL ICON GRID */
 
 .links {
   display: grid;
@@ -73,14 +94,12 @@ body {
   justify-content: center;
   align-items: center;
 
-  /* SAME VISUAL SPACE ABOVE AND BELOW ICONS */
-
-  margin-top: 65px;
-  margin-bottom: 65px;
+  margin-top: clamp(45px, 8vh, 80px);
+  margin-bottom: 35px;
 }
 
 
-/* CLICKABLE AREA */
+/* CLICKABLE ICON AREA */
 
 .links a {
   width: 44px;
@@ -100,7 +119,7 @@ body {
 }
 
 
-/* SMALLER ICONS */
+/* ICON SIZE */
 
 .links img {
   width: 32px;
@@ -112,17 +131,22 @@ body {
 }
 
 
-/* PHOTO */
+/* PHOTO SECTION */
 
 .photo {
   width: 100%;
 
+  margin-top: auto;
+
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
 
   overflow: hidden;
 }
+
+
+/* RESPONSIVE PHOTO */
 
 .photo img {
   display: block;
@@ -131,31 +155,31 @@ body {
   height: auto;
 
   object-fit: contain;
-  object-position: center top;
+  object-position: center bottom;
 }
 
 
-/* MOBILE */
+/* TABLETS AND SMALL PHONES */
 
 @media (max-width: 500px) {
 
   .content {
-    padding-top: 65px;
+    padding-top: clamp(45px, 7vh, 75px);
   }
 
   .tagline {
-    font-size: 10.5px;
-    letter-spacing: 4px;
+    font-size: clamp(8px, 2.5vw, 11px);
+    letter-spacing: clamp(2px, 0.9vw, 4px);
   }
 
   .links {
-    grid-template-columns: 42px 42px;
+    grid-template-columns: 44px 44px;
 
-    column-gap: 80px;
+    column-gap: 75px;
     row-gap: 36px;
 
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: clamp(45px, 8vh, 75px);
+    margin-bottom: 35px;
   }
 
   .links img {
@@ -165,7 +189,44 @@ body {
 
 }
 
+
+/* SHORT SCREENS */
+
+@media (max-height: 650px) {
+
+  .content {
+    padding-top: 35px;
+  }
+
+  .links {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    row-gap: 20px;
+  }
+
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 768px) {
+
+  .page {
+    max-width: 500px;
+  }
+
+  .content {
+    padding-top: 80px;
+  }
+
+  .links {
+    margin-top: 75px;
+  }
+
+}
+
 </style>
+
 </head>
 
 
@@ -173,6 +234,8 @@ body {
 
 <div class="page">
 
+
+  <!-- TOP CONTENT -->
 
   <div class="content">
 
@@ -184,7 +247,8 @@ body {
     </div>
 
 
-    <!-- ICONS -->
+
+    <!-- SOCIAL MEDIA ICONS -->
 
     <div class="links">
 
@@ -194,6 +258,7 @@ body {
       <a
         href="YOUR-LINKEDIN-LINK"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="LinkedIn">
 
         <img
@@ -203,11 +268,13 @@ body {
       </a>
 
 
+
       <!-- WHATSAPP -->
 
       <a
         href="YOUR-WHATSAPP-LINK"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="WhatsApp">
 
         <img
@@ -217,11 +284,13 @@ body {
       </a>
 
 
+
       <!-- INSTAGRAM -->
 
       <a
         href="YOUR-INSTAGRAM-LINK"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Instagram">
 
         <img
@@ -229,6 +298,7 @@ body {
           alt="Instagram">
 
       </a>
+
 
 
       <!-- EMAIL -->
@@ -249,7 +319,8 @@ body {
   </div>
 
 
-  <!-- PHOTO -->
+
+  <!-- PORTRAIT -->
 
   <div class="photo">
 
