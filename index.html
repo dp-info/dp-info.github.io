@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jiah Dela Peña</title>
+<title>Dela Pena</title>
 
 <style>
 
@@ -19,15 +20,21 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .page {
   width: 100%;
   max-width: 500px;
   min-height: 100vh;
-  margin: auto;
   background: #000;
+  color: #fff;
   text-align: center;
-  color: white;
+  padding-bottom: 60px;
 }
+
 
 /* PHOTO */
 
@@ -45,7 +52,8 @@ html, body {
   object-position: center top;
 }
 
-/* PHOTO → BLACK FADE */
+
+/* PHOTO TO BLACK FADE */
 
 .photo::after {
   content: "";
@@ -54,62 +62,76 @@ html, body {
   right: 0;
   bottom: 0;
   height: 45%;
+
   background: linear-gradient(
     to bottom,
-    transparent 0%,
+    rgba(0,0,0,0) 0%,
     #000 100%
   );
 }
 
+
 /* TAGLINE */
 
 .tagline {
-  margin-top: -25px;
   position: relative;
   z-index: 2;
+
+  margin-top: -25px;
+
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 7px;
   white-space: nowrap;
 }
 
-/* LINKS */
+
+/* SOCIAL ICON AREA */
 
 .links {
-  margin-top: 45px;
+  margin-top: 50px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 34px;
+
+  gap: 38px;
+
+  padding-bottom: 25px;
 }
 
+
+/* EACH ICON */
+
 .links a {
+  width: 40px;
+  height: 40px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
+
   text-decoration: none;
-  transition: transform .2s ease;
+
+  transition: transform 0.2s ease;
 }
 
 .links a:hover {
-  transform: scale(1.15);
+  transform: scale(1.12);
 }
+
+
+/* ALL ICONS SAME SIZE + WHITE */
 
 .links img {
   width: 34px;
   height: 34px;
+
   object-fit: contain;
+
+  filter: brightness(0) invert(1);
 }
 
-/* EMAIL ICON */
-
-.email {
-  font-size: 36px;
-  color: white;
-  font-weight: 200;
-}
 
 </style>
 </head>
@@ -119,54 +141,77 @@ html, body {
 
 <div class="page">
 
+
+  <!-- PORTRAIT -->
+
   <div class="photo">
-    <img src="photo.jpg" alt="Jiah Dela Peña">
+    <img src="photo.jpg" alt="Dela Pena">
   </div>
+
+
+  <!-- TAGLINE -->
 
   <div class="tagline">
     LEVERAGE DIFFERENTIAL
   </div>
 
 
+  <!-- SOCIAL LINKS -->
+
   <div class="links">
 
+
     <!-- LINKEDIN -->
-    <a href="YOUR-LINKEDIN-LINK" target="_blank">
+
+    <a href="YOUR-LINKEDIN-LINK" target="_blank" aria-label="LinkedIn">
+
       <img
         src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-        style="filter: invert(29%) sepia(99%) saturate(1695%) hue-rotate(181deg);"
         alt="LinkedIn">
+
     </a>
 
 
     <!-- WHATSAPP -->
-    <a href="YOUR-WHATSAPP-LINK" target="_blank">
+
+    <a href="YOUR-WHATSAPP-LINK" target="_blank" aria-label="WhatsApp">
+
       <img
         src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-        style="filter: invert(65%) sepia(90%) saturate(500%) hue-rotate(85deg);"
         alt="WhatsApp">
+
     </a>
 
 
     <!-- INSTAGRAM -->
-    <a href="YOUR-INSTAGRAM-LINK" target="_blank">
+
+    <a href="YOUR-INSTAGRAM-LINK" target="_blank" aria-label="Instagram">
+
       <img
         src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-        style="filter: invert(35%) sepia(96%) saturate(3500%) hue-rotate(320deg);"
         alt="Instagram">
+
     </a>
 
 
     <!-- EMAIL -->
+
     <a
-      class="email"
-      href="mailto:sjndp.work@gmail.com?subject=Let%27s%20connect%21&body=Hello%20Jiah%2C%0D%0A%0D%0A">
-      ✉
+      href="mailto:sjndp.work@gmail.com?subject=Let%27s%20connect%21&body=Hello%20Jiah%2C%0D%0A%0D%0A"
+      aria-label="Email">
+
+      <img
+        src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg"
+        alt="Email">
+
     </a>
 
+
   </div>
+
 
 </div>
 
 </body>
+
 </html>
