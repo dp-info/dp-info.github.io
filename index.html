@@ -16,96 +16,82 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #000;
+  background: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   display: flex;
   justify-content: center;
+  background: #ffffff;
 }
+
+
+/* MAIN PAGE */
 
 .page {
   width: 100%;
   max-width: 500px;
   min-height: 100vh;
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding-bottom: 60px;
-}
 
-
-/* PHOTO */
-
-.photo {
-  position: relative;
-  width: 100%;
-  height: 480px;
-  overflow: hidden;
-}
-
-.photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-
-/* PHOTO TO BLACK FADE */
-
-.photo::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 45%;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0) 0%,
-    #000 100%
-  );
-}
-
-
-/* TAGLINE */
-
-.tagline {
-  position: relative;
-  z-index: 2;
-
-  margin-top: -25px;
-
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 7px;
-  white-space: nowrap;
-}
-
-
-/* SOCIAL ICON AREA */
-
-.links {
-  margin-top: 50px;
+  background: #ffffff;
+  color: #000000;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  gap: 38px;
-
-  padding-bottom: 25px;
+  text-align: center;
+  overflow: hidden;
 }
 
 
-/* EACH ICON */
+/* TOP SECTION */
+
+.content {
+  width: 100%;
+  padding-top: 110px;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* LEVERAGE DIFFERENTIAL */
+
+.tagline {
+  font-size: 13px;
+  font-weight: 300;
+
+  letter-spacing: 7px;
+
+  white-space: nowrap;
+
+  margin-bottom: 50px;
+}
+
+
+/* 2 x 2 ICON GRID */
+
+.links {
+  display: grid;
+
+  grid-template-columns: 50px 50px;
+
+  column-gap: 85px;
+  row-gap: 42px;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 45px;
+}
+
+
+/* EACH CLICKABLE ICON */
 
 .links a {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 
   display: flex;
   align-items: center;
@@ -117,106 +103,178 @@ body {
 }
 
 .links a:hover {
-  transform: scale(1.12);
+  transform: scale(1.10);
 }
 
 
-/* ALL ICONS SAME SIZE + WHITE */
+/* ALL ICONS SAME SIZE */
 
 .links img {
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
 
   object-fit: contain;
 
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
 }
 
 
+/* PORTRAIT */
+
+.photo {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  margin-top: auto;
+
+  overflow: hidden;
+}
+
+.photo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+  .content {
+    padding-top: 90px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+
+  .links {
+    column-gap: 75px;
+    row-gap: 38px;
+  }
+
+  .links img {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="page">
+
+
+  <!-- TOP CONTENT -->
+
+  <div class="content">
+
+
+    <!-- TAGLINE -->
+
+    <div class="tagline">
+      LEVERAGE DIFFERENTIAL
+    </div>
+
+
+
+    <!-- SOCIAL ICONS -->
+
+    <div class="links">
+
+
+      <!-- LINKEDIN -->
+
+      <a
+        href="YOUR-LINKEDIN-LINK"
+        target="_blank"
+        aria-label="LinkedIn">
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+          alt="LinkedIn">
+
+      </a>
+
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        href="YOUR-WHATSAPP-LINK"
+        target="_blank"
+        aria-label="WhatsApp">
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+          alt="WhatsApp">
+
+      </a>
+
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        href="YOUR-INSTAGRAM-LINK"
+        target="_blank"
+        aria-label="Instagram">
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+          alt="Instagram">
+
+      </a>
+
+
+
+      <!-- EMAIL -->
+
+      <a
+        href="mailto:sjndp.work@gmail.com?subject=Let%27s%20connect%21&body=Hello%20Jiah%2C%0D%0A%0D%0A"
+        aria-label="Email">
+
+        <img
+          src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg"
+          alt="Email">
+
+      </a>
+
+
+    </div>
+
+  </div>
+
 
 
   <!-- PORTRAIT -->
 
   <div class="photo">
-    <img src="photo.jpg" alt="Dela Pena">
-  </div>
 
-
-  <!-- TAGLINE -->
-
-  <div class="tagline">
-    LEVERAGE DIFFERENTIAL
-  </div>
-
-
-  <!-- SOCIAL LINKS -->
-
-  <div class="links">
-
-
-    <!-- LINKEDIN -->
-
-    <a href="https://www.linkedin.com/in/jiahdelapena/"
-       target="_blank"
-       aria-label="LinkedIn">
-
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-        alt="LinkedIn">
-
-    </a>
-
-
-    <!-- INSTAGRAM -->
-
-    <a href="https://www.instagram.com/jiahdelapena"
-       target="_blank"
-       aria-label="Instagram">
-
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-        alt="Instagram">
-
-    </a>
-
-
-    <!-- WHATSAPP -->
-
-    <a href="https://wa.me/message/6ZUUCCETCAHSI1"
-       target="_blank"
-       aria-label="WhatsApp">
-
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-        alt="WhatsApp">
-
-    </a>
-
-
-    <!-- EMAIL -->
-
-    <a
-      href="mailto:sjndp.work@gmail.com?subject=Let%27s%20connect%21&body=Hello%20Jiah%2C%0D%0A%0D%0A"
-      aria-label="Email">
-
-      <img
-        src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg"
-        alt="Email">
-
-    </a>
-
+    <img
+      src="photo1.jpg"
+      alt="Dela Pena">
 
   </div>
 
 
 </div>
+
 
 </body>
 
